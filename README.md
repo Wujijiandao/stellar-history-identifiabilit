@@ -7,7 +7,7 @@ This repository supports the manuscript:
 > **Present-day stellar constraints leave multiple high-energy histories for TOI-700 and LHS 1140**
 
 **Yuzhan Zhang**  
-Independent Researcher, Japan  
+Independent Researcher, Beijing, China
 ORCID: [0009-0000-3121-7972](https://orcid.org/0009-0000-3121-7972)
 
 <!-- After the Zenodo v1.0.0 release, add the DOI badge here.
@@ -311,7 +311,7 @@ The Zenodo creator metadata should remain:
 ```text
 Zhang, Yuzhan
 ORCID: 0009-0000-3121-7972
-Affiliation: Independent Researcher, Japan
+Affiliation: Independent Researcher, Beijing, China
 ```
 
 ## License
