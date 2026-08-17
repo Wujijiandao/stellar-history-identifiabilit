@@ -1,0 +1,5 @@
+system,observable,role,history_discrimination,current_state_log10_spread_dex,cumulative_euv_log10_spread_dex,cumulative_wind_log10_spread_dex,note
+TOI-700 d,present rotation,history admissibility gate,partial,0.032200632310227614,0.4230080739632588,0.4365250555627191,194 rotation-compatible histories retain large cumulative-forcing spread.
+LHS 1140 b,present rotation,history admissibility gate,partial,0.0036611468078866023,0.19519986766713296,0.18832112455247085,97 rotation-compatible histories retain cumulative-forcing spread.
+LHS 1140 b,present X-ray luminosity,model-adequacy / observation-mapping audit,weak within rotation-compatible set,0.0038158062916488155,0.19519986766713296,0.18832112455247085,MORS Lx is nearly common across histories; X-ray bandpass/model discrepancy must be homogenized before a physical rejection gate.
+LHS 1140 b,age > 5 Gyr,support check,none for retained set,,0.19519986766713296,0.18832112455247085,All retained MORS crossing ages are >10.5 Gyr; the adopted lower bound removes no history.

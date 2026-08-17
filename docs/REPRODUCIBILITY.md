@@ -1,0 +1,38 @@
+# Reproducibility guide
+
+## A. Fast audit from included derived histories
+
+```bash
+pip install -e ".[dev]"
+pytest
+python scripts/verify_release.py
+python scripts/reproduce_derived_audits.py
+python scripts/make_paper_figures.py
+```
+
+This path is sufficient to:
+- verify the headline spread ratios;
+- reproduce the LHS 1140 activity-mapping comparison;
+- reproduce the E5-C6 diagnostic weighting/information audit;
+- regenerate all five paper figures.
+
+## B. Full upstream track regeneration
+
+1. Obtain `RotationXUVTracks.tar.xz` from Zenodo DOI `10.5281/zenodo.4266670`.
+2. Extract the track grid.
+3. Set `SCLH_MORS_ROOT`.
+4. Run E5-C2, then E5-C3.
+5. Run E5-C5 and E5-C6.
+
+```bash
+python experiments/e5c2_toi700d_mors_history_inversion.py
+python experiments/e5c3_lhs1140b_crosssystem_history.py
+python experiments/e5c5_activity_mapping_crosscalibration.py
+python experiments/e5c6_multiobservable_history_information.py
+```
+
+## Expected headline checks
+
+See `data/derived/paper_results.json`.
+
+The repository deliberately does not assign a probabilistic prior to the percentile tracks; they form a finite deterministic support set for the identifiability audit.

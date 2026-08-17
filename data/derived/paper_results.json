@@ -1,0 +1,47 @@
+{
+  "paper_title": "Present-day stellar constraints leave multiple high-energy histories for TOI-700 and LHS 1140",
+  "public_release_version": "1.0.0",
+  "scientific_upstream_snapshot": {
+    "name": "SCLH_v0.1.18_E5C6_dual_manuscript_snapshot.zip",
+    "sha256": "75a40de65b56642ed934a2ee21923c17c46db0178084f4c27cbd5de3b6885e80"
+  },
+  "toi700": {
+    "n_rotation_compatible_histories": 194,
+    "current_euv_max_over_min": 1.0769626263448955,
+    "cumulative_euv_max_over_min": 2.6485493772972117,
+    "cumulative_wind_max_over_min": 2.7322790715199865,
+    "fixed_mass_controls": {
+      "0.40": {
+        "n": 97,
+        "current_euv_max_over_min": 1.0671969295661399,
+        "cumulative_euv_max_over_min": 2.1962715253474934,
+        "cumulative_wind_max_over_min": 2.253001741931493
+      },
+      "0.45": {
+        "n": 97,
+        "current_euv_max_over_min": 1.0136266992109564,
+        "cumulative_euv_max_over_min": 2.1841394908601592,
+        "cumulative_wind_max_over_min": 2.411692388119979
+      }
+    }
+  },
+  "lhs1140": {
+    "n_rotation_compatible_histories": 97,
+    "current_euv_max_over_min": 1.008465735434102,
+    "cumulative_euv_max_over_min": 1.5674722741795144,
+    "cumulative_wind_max_over_min": 1.5428408334244554,
+    "current_x_log10_spread_dex": 0.0038158062916488155,
+    "pearson_current_lx_vs_cumulative_euv": -0.11294053405168486
+  },
+  "xray_observation_operator": {
+    "native_mors_band": "approximately 0.1-2.4 keV",
+    "spinelli_xmm_table_band": "0.2-2.4 keV",
+    "hard_physical_rejection_claimed": false,
+    "current_interpretation": "native activity/observation-mapping discrepancy alarm pending bandpass-homogenized forward modeling"
+  },
+  "inference_scope": {
+    "track_ensemble_interpretation": "deterministic finite model support, not an IID sample or population posterior",
+    "planetary_atmosphere_loss_inferred": false,
+    "universal_m_dwarf_spread_factor_claimed": false
+  }
+}

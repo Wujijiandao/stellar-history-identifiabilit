@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software or derived dataset, please cite this repository release and the associated paper."
+title: "Stellar History Identifiability: TOI-700 and LHS 1140"
+type: software
+version: 1.0.0
+date-released: 2026-08-17
+authors:
+  - family-names: Zhang
+    given-names: Yuzhan
+    orcid: "https://orcid.org/0009-0000-3121-7972"
+    affiliation: "Independent Researcher, Japan"
+license: MIT
+keywords:
+  - stellar activity
+  - stellar rotation
+  - XUV evolution
+  - exoplanets
+  - TOI-700
+  - LHS 1140
+  - partial identification
+  - reproducible research

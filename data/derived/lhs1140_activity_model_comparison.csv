@@ -1,0 +1,4 @@
+mapping,lx_erg_s,log10_lx_over_lbol,role
+Spinelli2023 observed central,1.3399999999999999e+26,-5.042673151399454,observation
+MORS native rotation-compatible median,3.50742898280649e+26,-4.624789063417393,history-model native activity mapping
+Wright2018 fully-convective central,1.0794756430492291e+26,-5.13656510226831,independent present-day empirical activity mapping

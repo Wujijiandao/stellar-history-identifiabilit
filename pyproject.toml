@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stellar-history-identifiability"
+version = "1.0.0"
+description = "Reproducible analysis for present-day stellar constraints and cumulative high-energy histories of TOI-700 and LHS 1140."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Yuzhan Zhang"}
+]
+dependencies = [
+  "numpy>=2.0,<3",
+  "pandas>=2.0,<3",
+  "scipy>=1.13,<2",
+  "matplotlib>=3.8,<4"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
