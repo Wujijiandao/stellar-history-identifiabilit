@@ -68,3 +68,38 @@ ax.set_ylabel("Fraction or relative width")
 ax.set_title("LHS 1140: activity weighting does not contract the historical interval")
 ax.legend(frameon=False); ax.grid(alpha=0.2); fig.tight_layout()
 save(fig, "figure_5_lhs1140_information_sensitivity")
+
+# Figure 6: value of independent age information for the historical identified set.
+age_info_path = DATA / "age_information_leverage.csv"
+if not age_info_path.exists():
+    raise FileNotFoundError(
+        "Missing data/derived/age_information_leverage.csv. "
+        "Run experiments/e5c7_age_information_leverage.py and copy its frozen output into data/derived."
+    )
+age_info = pd.read_csv(age_info_path)
+fig, ax = plt.subplots(figsize=(7.2, 5.2))
+for label in [
+    "TOI-700 combined",
+    "TOI-700 0.40 Msun",
+    "TOI-700 0.45 Msun",
+    "LHS 1140 0.20 Msun",
+]:
+    g = age_info[age_info.model_slice == label]
+    ax.plot(
+        g.age_window_width_myr / 1000.0,
+        g.worst_case_cumulative_euv_width,
+        marker="o" if label in ("TOI-700 combined", "LHS 1140 0.20 Msun") else None,
+        markevery=max(1, len(g)//12),
+        linewidth=1.8,
+        label=label.replace("Msun", "$M_\\odot$")
+    )
+ax.axhline(1.25, linewidth=1.0, linestyle="--", alpha=0.6)
+ax.set_xlabel("Width of an independent age interval (Gyr)")
+ax.set_ylabel("Worst-case residual cumulative-EUV width (max/min)")
+ax.set_title("Age information and model-slice resolution jointly control history support")
+ax.set_xlim(left=0)
+ax.set_ylim(bottom=1.0)
+ax.legend(frameon=False, fontsize=8)
+ax.grid(alpha=0.2)
+fig.tight_layout()
+save(fig, "figure_6_age_information_leverage")

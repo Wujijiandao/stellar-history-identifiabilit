@@ -1,0 +1,61 @@
+{
+  "interpretation": "Worst-case finite-support contraction under a hypothetical independent age interval; not a posterior and not a claim of observationally attainable age precision.",
+  "checkpoints": {
+    "TOI-700 combined": {
+      "100_Myr": {
+        "euv_width": 1.7312456475739881,
+        "wind_width": 1.8954833536082094
+      },
+      "300_Myr": {
+        "euv_width": 1.8111662981561396,
+        "wind_width": 1.9886501375624537
+      },
+      "500_Myr": {
+        "euv_width": 1.8111662981561396,
+        "wind_width": 1.9886501375624537
+      }
+    },
+    "TOI-700 0.40 Msun": {
+      "100_Myr": {
+        "euv_width": 1.119137325368272,
+        "wind_width": 1.139971760341356
+      },
+      "300_Myr": {
+        "euv_width": 1.361836256255923,
+        "wind_width": 1.4085195436600648
+      },
+      "500_Myr": {
+        "euv_width": 1.6378672343442178,
+        "wind_width": 1.6911589628758634
+      }
+    },
+    "TOI-700 0.45 Msun": {
+      "100_Myr": {
+        "euv_width": 1.1152167217539684,
+        "wind_width": 1.1464769902038574
+      },
+      "300_Myr": {
+        "euv_width": 1.370187173645276,
+        "wind_width": 1.4727685863320374
+      },
+      "500_Myr": {
+        "euv_width": 1.6302865527305996,
+        "wind_width": 1.7714306333620944
+      }
+    },
+    "LHS 1140 0.20 Msun": {
+      "100_Myr": {
+        "euv_width": 1.064458302685109,
+        "wind_width": 1.0670335982701713
+      },
+      "300_Myr": {
+        "euv_width": 1.1398805483655474,
+        "wind_width": 1.1396711480962702
+      },
+      "500_Myr": {
+        "euv_width": 1.2177073380104375,
+        "wind_width": 1.2172839140712455
+      }
+    }
+  }
+}

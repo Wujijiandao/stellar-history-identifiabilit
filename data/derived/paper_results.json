@@ -1,6 +1,6 @@
 {
   "paper_title": "Present-day stellar constraints leave multiple high-energy histories for TOI-700 and LHS 1140",
-  "public_release_version": "1.0.0",
+  "public_release_version": "1.0.2",
   "scientific_upstream_snapshot": {
     "name": "SCLH_v0.1.18_E5C6_dual_manuscript_snapshot.zip",
     "sha256": "75a40de65b56642ed934a2ee21923c17c46db0178084f4c27cbd5de3b6885e80"
@@ -37,11 +37,38 @@
     "native_mors_band": "approximately 0.1-2.4 keV",
     "spinelli_xmm_table_band": "0.2-2.4 keV",
     "hard_physical_rejection_claimed": false,
-    "current_interpretation": "native activity/observation-mapping discrepancy alarm pending bandpass-homogenized forward modeling"
+    "current_interpretation": "native activity/observation-mapping discrepancy alarm; bandpass mismatch prevents an uncalibrated hard rejection, but a bandpass-only reconciliation would require a factor of about 2.285",
+    "required_bandpass_only_factor_to_reach_mors_lower_from_observed_upper": 2.285
   },
   "inference_scope": {
     "track_ensemble_interpretation": "deterministic finite model support, not an IID sample or population posterior",
     "planetary_atmosphere_loss_inferred": false,
     "universal_m_dwarf_spread_factor_claimed": false
+  },
+  "zenodo_doi": "10.5281/zenodo.21974562",
+  "author_metadata": {
+    "name": "Yuzhan Zhang",
+    "affiliation": "Independent Researcher, Beijing, China",
+    "orcid": "0009-0000-3121-7972"
+  },
+  "age_information_leverage": {
+    "interpretation": "worst-case deterministic finite-support contraction under a hypothetical independent age interval; not a posterior and not a claim of attainable age precision",
+    "age_window_100_myr": {
+      "toi700_0.40_cumulative_euv_width": 1.119137325368272,
+      "toi700_0.45_cumulative_euv_width": 1.1152167217539684,
+      "toi700_combined_cumulative_euv_width": 1.7312456475739881,
+      "lhs1140_0.20_cumulative_euv_width": 1.064458302685109
+    },
+    "age_window_200_myr": {
+      "toi700_0.40_cumulative_euv_width": 1.2297078964162194,
+      "toi700_0.45_cumulative_euv_width": 1.236359196264707,
+      "lhs1140_0.20_cumulative_euv_width": 1.1007433706259817
+    },
+    "first_age_separation_exceeding_1.25_euv_width_myr": {
+      "toi700_0.40": 219.89026043105923,
+      "toi700_0.45": 214.3772675065561,
+      "lhs1140_0.20": 600.0,
+      "toi700_combined": 2.052563695321169
+    }
   }
 }

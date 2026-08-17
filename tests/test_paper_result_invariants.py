@@ -35,3 +35,12 @@ def test_public_release_governance():
     meta = json.loads((DATA / "paper_results.json").read_text(encoding="utf-8"))
     assert meta["xray_observation_operator"]["hard_physical_rejection_claimed"] is False
     assert meta["inference_scope"]["track_ensemble_interpretation"] == "deterministic finite model support, not an IID sample or population posterior"
+
+def test_v102_age_information_release_metadata():
+    meta = json.loads((DATA / "paper_results.json").read_text(encoding="utf-8"))
+    assert meta["public_release_version"] == "1.0.2"
+    age = meta["age_information_leverage"]["age_window_100_myr"]
+    assert np.isclose(age["toi700_0.40_cumulative_euv_width"], 1.119137325368272, rtol=1e-12)
+    assert np.isclose(age["toi700_0.45_cumulative_euv_width"], 1.1152167217539684, rtol=1e-12)
+    assert np.isclose(age["lhs1140_0.20_cumulative_euv_width"], 1.064458302685109, rtol=1e-12)
+    assert age["toi700_combined_cumulative_euv_width"] > 1.7

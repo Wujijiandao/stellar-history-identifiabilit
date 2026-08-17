@@ -36,3 +36,9 @@ Public source:
 - associated paper: Johnstone, Bartel & Güdel (2021), A&A 649, A96.
 
 The included `data/derived/*.csv` files are derived analysis products needed to audit the published numerical claims.
+
+## v1.0.2 derived-only extension
+
+E5-C7 is a derived-only value-of-information audit. It consumes the frozen E5-C2/E5-C3 history tables and does not alter or regenerate those histories. It quantifies the worst residual model-conditional cumulative-forcing width that can remain after a hypothetical independent age interval of declared total width is applied.
+
+The E5-C7 outputs are therefore downstream diagnostics with explicit provenance to the same frozen history tables. They do not introduce a new stellar-evolution track family or a new population prior.

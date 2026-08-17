@@ -63,3 +63,46 @@ def log10_spread(values):
     if np.any(x <= 0):
         raise ValueError("values must be positive")
     return float(np.log10(np.max(x) / np.min(x)))
+
+
+def multiplicative_width(values):
+    """Return max(values) / min(values) for positive finite support."""
+    x = np.asarray(values, dtype=float)
+    if x.size == 0:
+        raise ValueError("values must be non-empty")
+    if np.any(~np.isfinite(x)) or np.any(x <= 0):
+        raise ValueError("values must be positive and finite")
+    return float(np.max(x) / np.min(x))
+
+
+def worst_case_age_window_width(match_age_myr, values, window_myr):
+    """Worst residual multiplicative width after an independent age-window constraint.
+
+    The input histories are already conditioned on the paper's present-state
+    constraints.  Suppose an additional, independent age measurement restricts
+    the model-conditional matching age to *some* interval of total width
+    ``window_myr``.  Because the interval centre is not fixed here, this function
+    returns the largest multiplicative width that can remain in any such interval.
+
+    This is a deterministic finite-support sensitivity diagnostic, not a posterior
+    interval and not a claim that the assumed age precision is observationally
+    attainable.
+    """
+    age = np.asarray(match_age_myr, dtype=float)
+    x = np.asarray(values, dtype=float)
+    if age.size == 0 or x.size == 0 or len(age) != len(x):
+        raise ValueError("match_age_myr and values must be non-empty and equal length")
+    if np.any(~np.isfinite(age)) or np.any(~np.isfinite(x)) or np.any(x <= 0):
+        raise ValueError("inputs must be finite and values positive")
+    if window_myr < 0:
+        raise ValueError("window_myr must be non-negative")
+
+    width = 1.0
+    tol = 1e-9
+    # It is sufficient to anchor the interval at an observed support age: the
+    # extrema of any finite-support interval occur at support points.
+    for left in age:
+        mask = (age >= left - tol) & (age <= left + float(window_myr) + tol)
+        if np.any(mask):
+            width = max(width, multiplicative_width(x[mask]))
+    return float(width)

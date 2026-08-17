@@ -1,4 +1,4 @@
-"""Re-run E5-C5 and E5-C6 using the frozen E5-C2/E5-C3 derived history tables.
+"""Re-run E5-C5, E5-C6 and E5-C7 using the frozen E5-C2/E5-C3 derived history tables.
 
 This path does not require redistribution of the third-party MORS track archive.
 """
@@ -24,7 +24,8 @@ env['PYTHONPATH'] = str(ROOT / 'src') + os.pathsep + env.get('PYTHONPATH', '')
 for script in [
     ROOT / "experiments/e5c5_activity_mapping_crosscalibration.py",
     ROOT / "experiments/e5c6_multiobservable_history_information.py",
+    ROOT / "experiments/e5c7_age_information_leverage.py",
 ]:
     subprocess.run([sys.executable, str(script)], check=True, cwd=ROOT, env=env)
 
-print("Reproduced E5-C5 and E5-C6 into results/E5C5 and results/E5C6.")
+print("Reproduced E5-C5, E5-C6 and E5-C7 into results/E5C5, results/E5C6 and results/E5C7.")
